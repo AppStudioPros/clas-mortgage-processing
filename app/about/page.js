@@ -24,7 +24,7 @@ export default function AboutPage() {
           <p className="lede max-w-2xl mx-auto">
             We started Clas in 2023 with one purpose: deliver dependable contract loan processing that respects the loan officer's time and the borrower's deadline.
           </p>
-        </div>
+        </div></Reveal>
       </section>
 
       {/* Story */}
@@ -43,7 +43,7 @@ export default function AboutPage() {
           <p className="text-slate2-700 leading-relaxed">
             If you're a broker, LO, or small lender shop looking for a processing partner who actually answers the phone and clears files — that's the relationship we're building.
           </p>
-        </div>
+        </div></Reveal>
       </section>
 
       {/* Shawna */}
@@ -88,7 +88,7 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-          </div>
+          </div></Reveal>
         </div>
       </section>
 
@@ -122,7 +122,7 @@ export default function AboutPage() {
             Get Started
             <ArrowRight className="h-4 w-4" />
           </Link>
-        </div>
+        </div></Reveal>
       </section>
     </>
   );

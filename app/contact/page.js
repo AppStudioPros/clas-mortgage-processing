@@ -15,7 +15,7 @@ export default function ContactPage() {
           <div className="eyebrow mb-3">Let&apos;s Talk</div>
           <h1 className="h-display text-slate2-900 mb-4">Tell us about your shop.</h1>
           <p className="lede max-w-xl mx-auto">We respond the same business day with onboarding steps and a per-file rate for your mix.</p>
-        </div>
+        </div></Reveal>
       </section>
       <section className="py-16 sm:py-20 bg-white">
         <div className="container-px mx-auto max-w-5xl">
@@ -46,7 +46,7 @@ export default function ContactPage() {
                 <p className="text-sm text-cream-200/80 leading-relaxed">Mortgage brokers, independent loan officers, and small lender shops. We are not a direct-to-consumer service.</p>
               </div>
             </div>
-          </div>
+          </div></Reveal>
         </div>
       </section>
     </>

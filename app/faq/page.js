@@ -89,14 +89,14 @@ export default function FAQPage() {
             </a>
             {' '}— we respond the same business day.
           </p>
-        </div>
+        </div></Reveal>
       </section>
 
       {/* Accordion */}
       <section className="py-16 sm:py-20 bg-white">
         <Reveal variant="fadeUp" delay={0.1}><div className="container-px mx-auto max-w-3xl">
           <FAQAccordion items={FAQ} />
-        </div>
+        </div></Reveal>
       </section>
 
       {/* CTA */}
@@ -114,7 +114,7 @@ export default function FAQPage() {
               Email Us
             </a>
           </div>
-        </div>
+        </div></Reveal>
       </section>
     </>
   );
