@@ -1,4 +1,5 @@
 import { Mail, ShieldCheck } from 'lucide-react';
+import { Reveal, StaggerParent, StaggerChild } from '@/components/Reveal';
 import ContactForm from '@/components/ContactForm';
 
 export const metadata = {
@@ -10,7 +11,7 @@ export default function ContactPage() {
   return (
     <>
       <section className="bg-cream-50 pt-16 sm:pt-24 pb-12">
-        <div className="container-px mx-auto max-w-4xl text-center">
+        <Reveal variant="fadeUp"><div className="container-px mx-auto max-w-4xl text-center">
           <div className="eyebrow mb-3">Let&apos;s Talk</div>
           <h1 className="h-display text-slate2-900 mb-4">Tell us about your shop.</h1>
           <p className="lede max-w-xl mx-auto">We respond the same business day with onboarding steps and a per-file rate for your mix.</p>
@@ -18,7 +19,7 @@ export default function ContactPage() {
       </section>
       <section className="py-16 sm:py-20 bg-white">
         <div className="container-px mx-auto max-w-5xl">
-          <div className="grid lg:grid-cols-[1.4fr_1fr] gap-12 lg:gap-16">
+          <Reveal variant="fadeUp" delay={0.1}><div className="grid lg:grid-cols-[1.4fr_1fr] gap-12 lg:gap-16">
             <ContactForm />
             <div className="space-y-6">
               <div className="rounded-2xl bg-cream-50 border border-line p-6">

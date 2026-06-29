@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Reveal, StaggerParent, StaggerChild } from '@/components/Reveal';
 import { ArrowRight } from 'lucide-react';
 
 export const metadata = {
@@ -14,7 +15,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 -z-10">
           <div className="absolute -top-32 right-1/3 h-[400px] w-[400px] rounded-full bg-lavender-100/40 blur-[120px]" />
         </div>
-        <div className="container-px mx-auto max-w-5xl text-center">
+        <Reveal variant="fadeUp"><div className="container-px mx-auto max-w-5xl text-center">
           <div className="eyebrow mb-3">About Clas</div>
           <h1 className="h-display text-slate2-900 mb-5 max-w-3xl mx-auto">
             Built around the loan officer.<br />
@@ -28,7 +29,7 @@ export default function AboutPage() {
 
       {/* Story */}
       <section className="py-16 sm:py-20 bg-white">
-        <div className="container-px mx-auto max-w-3xl prose prose-lg">
+        <Reveal variant="fadeUp"><div className="container-px mx-auto max-w-3xl prose prose-lg">
           <h2 className="font-display text-3xl sm:text-4xl text-slate2-900 mb-6">The story</h2>
           <p className="text-slate2-700 leading-relaxed mb-5">
             The mortgage industry doesn't lack capacity. It lacks <strong className="text-slate2-900">partners</strong> — processors who treat your file like their own pipeline, who communicate without being asked, who know what each lender wants before the lender asks for it.
@@ -48,7 +49,7 @@ export default function AboutPage() {
       {/* Shawna */}
       <section className="py-16 sm:py-20 bg-cream-50">
         <div className="container-px mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-[1fr_1.4fr] gap-10 lg:gap-16 items-start">
+          <Reveal variant="slideLeft"><div className="grid lg:grid-cols-[1fr_1.4fr] gap-10 lg:gap-16 items-start">
             <div>
               <div className="relative aspect-[4/5] max-w-sm">
                 <div className="absolute -inset-2 rounded-2xl bg-gradient-to-br from-lavender-200/60 to-sage-100 -z-10 blur-xl" />
@@ -112,7 +113,7 @@ export default function AboutPage() {
 
       {/* CTA */}
       <section className="py-20 bg-lavender-700 text-cream-50 text-center">
-        <div className="container-px mx-auto max-w-2xl">
+        <Reveal variant="fadeUp"><div className="container-px mx-auto max-w-2xl">
           <h2 className="h-section text-cream-50 mb-4">Ready to start a conversation?</h2>
           <p className="text-cream-200/80 mb-8">
             Tell us about your shop and the LOS you're on. We respond the same business day.

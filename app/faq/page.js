@@ -1,4 +1,5 @@
 import { Plus } from 'lucide-react';
+import { Reveal } from '@/components/Reveal';
 import Link from 'next/link';
 import FAQAccordion from './FAQAccordion';
 
@@ -75,7 +76,7 @@ export default function FAQPage() {
     <>
       {/* Hero */}
       <section className="bg-cream-50 pt-16 sm:pt-24 pb-12">
-        <div className="container-px mx-auto max-w-3xl text-center">
+        <Reveal variant="fadeUp"><div className="container-px mx-auto max-w-3xl text-center">
           <div className="eyebrow mb-3">Frequently Asked Questions</div>
           <h1 className="h-display text-slate2-900 mb-4">
             Everything we get asked,<br />
@@ -93,14 +94,14 @@ export default function FAQPage() {
 
       {/* Accordion */}
       <section className="py-16 sm:py-20 bg-white">
-        <div className="container-px mx-auto max-w-3xl">
+        <Reveal variant="fadeUp" delay={0.1}><div className="container-px mx-auto max-w-3xl">
           <FAQAccordion items={FAQ} />
         </div>
       </section>
 
       {/* CTA */}
       <section className="py-16 sm:py-20 bg-lavender-700 text-cream-50">
-        <div className="container-px mx-auto max-w-2xl text-center">
+        <Reveal variant="fadeUp"><div className="container-px mx-auto max-w-2xl text-center">
           <h2 className="h-section text-cream-50 mb-4">Still have a question?</h2>
           <p className="text-cream-200/80 mb-8">
             Reach out directly. Shawna or the team gets back to you the same business day.

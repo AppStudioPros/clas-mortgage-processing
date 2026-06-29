@@ -1,6 +1,7 @@
 'use client';
 import { Home, Shield, Leaf, Zap, BarChart3, Gift } from 'lucide-react';
 import { useState } from 'react';
+import { Reveal, StaggerParent, StaggerChild } from './Reveal';
 
 // ── Real lenders with Clearbit logo URLs ────────────────────────────────────
 const LENDERS = [
@@ -143,7 +144,7 @@ export default function PartnershipBand() {
     <>
       {/* ── Lenders Marquee ─────────────────────────────────────────────── */}
       <section id="lenders" className="relative py-12 sm:py-16 overflow-hidden" style={{ background: '#fafafa' }}>
-        <div className="container-px mx-auto max-w-7xl mb-10 text-center">
+        <Reveal variant="fadeUp" className="container-px mx-auto max-w-7xl mb-10 text-center">
           <div className="eyebrow mb-3">Lender Network</div>
           <h2 className="h-section text-slate2-900 mb-4">
             We&apos;ve processed with the lenders<br className="hidden sm:inline" /> you work with.
@@ -151,7 +152,7 @@ export default function PartnershipBand() {
           <p className="lede max-w-2xl mx-auto">
             Over two decades of lender relationships means we know what each underwriter wants — before they ask for it.
           </p>
-        </div>
+        </Reveal>
 
         <div className="marquee-mask w-full overflow-hidden py-2">
           <div className="marquee-track" style={{ gap: 12 }}>
@@ -169,50 +170,54 @@ export default function PartnershipBand() {
       {/* ── Loan Types ──────────────────────────────────────────────────── */}
       <section id="loan-types" className="py-16 sm:py-20 bg-white">
         <div className="container-px mx-auto max-w-7xl">
-          <div className="text-center mb-12">
+          <Reveal variant="fadeUp" className="text-center mb-12">
             <div className="eyebrow mb-3">Loan Types</div>
             <h2 className="h-section text-slate2-900 mb-4">Every file type. Processed right.</h2>
             <p className="lede max-w-xl mx-auto">
               From straightforward conventional to complex non-QM — we&apos;ve seen it. Send it over.
             </p>
-          </div>
-          <div className="loan-types-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
+          </Reveal>
+          <StaggerParent className="loan-types-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4" staggerChildren={0.07}>
             {LOAN_TYPES.map(({ icon: Icon, name, desc, color, bg }) => (
-              <div key={name} style={{ background: bg, border: `1.5px solid ${color}30` }}
-                className="flex flex-col items-center text-center p-5 rounded-2xl hover:shadow-md transition-all group cursor-default">
-                <div style={{ background: color, width: 44, height: 44, borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}
-                  className="group-hover:scale-110 transition-transform">
-                  <Icon size={20} color="white" strokeWidth={2} />
+              <StaggerChild key={name} variant="scaleUp">
+                <div style={{ background: bg, border: `1.5px solid ${color}30` }}
+                  className="flex flex-col items-center text-center p-5 rounded-2xl hover:shadow-md transition-all group cursor-default h-full">
+                  <div style={{ background: color, width: 44, height: 44, borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}
+                    className="group-hover:scale-110 transition-transform">
+                    <Icon size={20} color="white" strokeWidth={2} />
+                  </div>
+                  <div style={{ fontWeight: 800, color: '#1e293b', fontSize: 13, marginBottom: 4 }}>{name}</div>
+                  <div style={{ fontSize: 11, color: '#64748b', lineHeight: 1.4 }}>{desc}</div>
                 </div>
-                <div style={{ fontWeight: 800, color: '#1e293b', fontSize: 13, marginBottom: 4 }}>{name}</div>
-                <div style={{ fontSize: 11, color: '#64748b', lineHeight: 1.4 }}>{desc}</div>
-              </div>
+              </StaggerChild>
             ))}
-          </div>
+          </StaggerParent>
         </div>
       </section>
 
       {/* ── LOS Integrations ────────────────────────────────────────────── */}
       <section id="integrations" className="py-16 sm:py-20" style={{ background: '#fafafa' }}>
         <div className="container-px mx-auto max-w-7xl">
-          <div className="text-center mb-12">
+          <Reveal variant="fadeUp" className="text-center mb-12">
             <div className="eyebrow mb-3">LOS Integrations</div>
             <h2 className="h-section text-slate2-900 mb-4">Work in your system. Not ours.</h2>
             <p className="lede max-w-xl mx-auto">
               We embed directly into your LOS as a contract processor — right access, zero disruption, no workflow changes on your end.
             </p>
-          </div>
-          <div className="los-grid grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          </Reveal>
+          <StaggerParent className="los-grid grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto" staggerChildren={0.1}>
             {LOS_SYSTEMS.map(({ name, note, Logo, border, bg }) => (
-              <div key={name} style={{ background: bg, border: `2px solid ${border}25` }}
-                className="flex flex-col items-center text-center p-6 rounded-2xl hover:shadow-lg transition-all hover:-translate-y-1">
-                <div className="mb-4 flex items-center justify-center" style={{ minHeight: 40 }}>
-                  <Logo />
+              <StaggerChild key={name} variant="scaleUp">
+                <div style={{ background: bg, border: `2px solid ${border}25` }}
+                  className="flex flex-col items-center text-center p-6 rounded-2xl hover:shadow-lg transition-all hover:-translate-y-1 h-full">
+                  <div className="mb-4 flex items-center justify-center" style={{ minHeight: 40 }}>
+                    <Logo />
+                  </div>
+                  <div style={{ fontSize: 11, color: border, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em' }}>{note}</div>
                 </div>
-                <div style={{ fontSize: 11, color: border, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em' }}>{note}</div>
-              </div>
+              </StaggerChild>
             ))}
-          </div>
+          </StaggerParent>
           <div className="mt-10 text-center">
             <div className="inline-flex items-center gap-2 bg-white rounded-full px-6 py-3 text-sm text-slate2-700 shadow-sm border border-teal2-200">
               <span className="w-2 h-2 rounded-full bg-teal2-500 animate-pulse inline-block"></span>
