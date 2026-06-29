@@ -1,5 +1,14 @@
 'use client';
-import { FileText, ScanSearch, MessageSquareText, CheckCircle2 } from 'lucide-react';
+import { FileText, ScanSearch, MessageSquareText, CheckCircle2, CheckCircle } from 'lucide-react';
+
+const LOAN_TYPES = [
+  { label: 'Conventional / FHA / VA / USDA', sub: 'Purchase & Refinance' },
+  { label: 'Non-QM / Jumbo', sub: 'All product types' },
+  { label: 'FHA 203K / ITIN / DSCR', sub: 'Specialty products' },
+  { label: 'FHA Streamline / VA IRRRL', sub: 'Streamline refis' },
+  { label: 'Piggybacks', sub: '2nd lien / combo' },
+  { label: 'A La Carte & Tailored', sub: 'Partial processing' },
+];
 
 const SERVICES = [
   {
@@ -57,6 +66,26 @@ export default function Services() {
               <p className="text-sm leading-relaxed text-slate2-700">{s.body}</p>
             </div>
           ))}
+        </div>
+
+        {/* Loan types we process */}
+        <div className="mt-14">
+          <p className="text-center text-xs font-semibold uppercase tracking-widest text-slate2-500 mb-6">Loan types we process</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+            {LOAN_TYPES.map(({ label, sub }) => (
+              <div key={label} className="rounded-xl bg-cream-50 border border-line p-4 text-center">
+                <CheckCircle className="h-4 w-4 text-lavender-500 mx-auto mb-2" />
+                <p className="text-xs font-semibold text-slate2-800 leading-snug mb-1">{label}</p>
+                <p className="text-[10px] text-slate2-500">{sub}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Guarantee banner */}
+        <div className="mt-8 rounded-2xl bg-lavender-700 px-6 py-4 flex items-center justify-center gap-3 text-cream-50 text-sm font-semibold text-center flex-wrap">
+          <CheckCircle className="h-4 w-4 flex-shrink-0 text-lavender-300" />
+          All processing fees are paid on the closing disclosure — no fee if the loan does not close and fund.
         </div>
       </div>
     </section>
