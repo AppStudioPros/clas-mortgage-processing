@@ -8,17 +8,17 @@ const QUOTES = [
   {
     text: "She's amazing, fast and accurate.",
     by: "Loan Officer Partner",
-    note: "Name available on request",
+    note: "Identity withheld by request",
   },
   {
     text: "Small issues do not slow her down, she gets it handled.",
     by: "Mortgage Broker",
-    note: "Name available on request",
+    note: "Identity withheld by request",
   },
   {
     text: "Clas Mortgage accommodates their clients and goes the extra mile.",
     by: "Broker Partner",
-    note: "Name available on request",
+    note: "Identity withheld by request",
   },
 ];
 
@@ -71,7 +71,7 @@ export default function Hero() {
             {/* Trust micro-bar — higher contrast, readable */}
             <div className="hero-trust flex flex-wrap items-center gap-x-7 gap-y-3">
               {[
-                { icon: FileCheck2, text: '20+ years processing', color: '#2a9d8f' },
+                { icon: FileCheck2, text: '25+ years processing', color: '#2a9d8f' },
                 { icon: Clock,      text: '1-day initial review', color: '#7b6fa0' },
                 { icon: ShieldCheck,text: 'Pay only at closing',  color: '#6b3fa0' },
               ].map(({ icon: Icon, text, color }) => (

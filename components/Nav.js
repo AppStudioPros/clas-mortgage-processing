@@ -8,7 +8,6 @@ const LINKS = [
   { href: '/#integrations', label: 'Integrations' },
   { href: '/resources', label: 'Resources' },
   { href: '/about', label: 'About' },
-  { href: '/blog', label: 'Blog' },
   { href: '/faq', label: 'FAQ' },
   { href: '/resources', label: 'Resources' },
 ];

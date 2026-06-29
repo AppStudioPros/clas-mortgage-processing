@@ -13,7 +13,7 @@ const POINTS = [
   },
   {
     num: '03',
-    title: '20+ years processing',
+    title: '25+ years processing',
     body: 'Shawna started in 2001. Worked the 2007-2009 recession as a contract processor. Returned through underwriting and management before founding Clas in 2023.',
   },
   {
