@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { ExternalLink, LogIn, FileText, FolderOpen, LayoutDashboard } from 'lucide-react';
 import LoanSubmitModal from '@/components/LoanSubmitModal';
+import { Reveal, StaggerParent, StaggerChild } from '@/components/Reveal';
 
 const resources = [
   {
@@ -60,18 +61,19 @@ export default function ResourcesClient() {
   return (
     <>
       <section className="bg-cream-50 pt-16 sm:pt-24 pb-12">
-        <div className="container-px mx-auto max-w-4xl text-center">
+        <Reveal variant="fadeUp"><div className="container-px mx-auto max-w-4xl text-center">
           <div className="eyebrow mb-3">Partner Resources</div>
           <h1 className="h-display text-slate2-900 mb-4">Everything you need,<br />in one place.</h1>
           <p className="lede max-w-xl mx-auto">Direct links to the tools and platforms you use to work with Clas. Bookmark this page for quick access.</p>
-        </div>
+        </div></Reveal>
       </section>
 
       <section className="py-16 sm:py-20 bg-white">
         <div className="container-px mx-auto max-w-4xl">
-          <div className="grid sm:grid-cols-2 gap-6">
+          <StaggerParent className="grid sm:grid-cols-2 gap-6">
             {resources.map(({ id, icon: Icon, title, description, href, label, color, bg, border, external }) => {
               const inner = (
+
                 <>
                   <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl transition-transform group-hover:scale-110" style={{ background: color }}>
                     <Icon className="h-5 w-5 text-white" />
@@ -86,20 +88,21 @@ export default function ResourcesClient() {
 
               if (!external) {
                 return (
+                  <StaggerChild key={id} variant="scaleUp">
                   <button
-                    key={id}
                     onClick={() => setModalOpen(true)}
                     style={{ background: bg, borderColor: border, borderWidth: '1.5px', borderStyle: 'solid' }}
                     className="group relative rounded-2xl p-7 transition-all hover:shadow-xl hover:-translate-y-1 flex flex-col text-left w-full"
                   >
                     {inner}
                   </button>
+                  </StaggerChild>
                 );
               }
 
               return (
+                <StaggerChild key={id} variant="scaleUp">
                 <a
-                  key={id}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -108,11 +111,12 @@ export default function ResourcesClient() {
                 >
                   {inner}
                 </a>
+                </StaggerChild>
               );
             })}
-          </div>
+          </StaggerParent>
 
-          <div className="mt-12 rounded-2xl bg-lavender-50 border border-lavender-100 p-7 text-center">
+          <Reveal variant="fadeUp" delay={0.2}><div className="mt-12 rounded-2xl bg-lavender-50 border border-lavender-100 p-7 text-center">
             <p className="text-sm text-slate2-700 leading-relaxed">
               Need help getting access or troubleshooting a tool?{' '}
               <a href="mailto:info@clasmortgageprocessing.com" className="text-lavender-600 font-semibold underline decoration-lavender-400 underline-offset-2 hover:text-lavender-700">
@@ -120,7 +124,7 @@ export default function ResourcesClient() {
               </a>{' '}
               or reach out through your LOS and we'll get you sorted.
             </p>
-          </div>
+          </div></Reveal>
         </div>
       </section>
 
