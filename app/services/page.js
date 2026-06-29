@@ -1,2 +1,2 @@
-import { redirect } from 'next/navigation';
-export default function Services() { redirect('/#services'); }
+import { permanentRedirect } from 'next/navigation';
+export default function Services() { permanentRedirect('/#services'); }
