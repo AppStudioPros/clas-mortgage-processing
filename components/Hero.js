@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { ArrowRight, FileCheck2, Clock, ShieldCheck } from 'lucide-react';
 import CloudBackdrop from './CloudBackdrop';
+import { Reveal, StaggerParent, StaggerChild } from './Reveal';
 
 const QUOTES = [
   {
@@ -131,7 +132,7 @@ export default function Hero() {
               </div>
 
               {/* Small floating CTC stat — purple */}
-              <div className="hero-ctc-badge absolute -bottom-3 -right-3 hidden sm:block">
+              <div className="hero-ctc-badge float-y-delay absolute -bottom-3 -right-3 hidden sm:block">
                 <div className="rounded-xl bg-lavender-600 text-white px-4 py-2.5 shadow-lg shadow-lavender-700/30">
                   <div className="text-[9px] font-bold uppercase tracking-[0.15em] text-lavender-100 leading-none">
                     Submission &rarr; CTC

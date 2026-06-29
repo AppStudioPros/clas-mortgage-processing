@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { Reveal } from './Reveal';
 
 export default function CTA() {
   return (
@@ -8,7 +9,7 @@ export default function CTA() {
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[400px] w-[700px] rounded-full bg-lavender-200/30 blur-[120px]" />
       </div>
-      <div className="container-px mx-auto max-w-3xl text-center">
+      <Reveal variant="fadeUp"><div className="container-px mx-auto max-w-3xl text-center">
         <div className="eyebrow mb-3">Let's Talk</div>
         <h2 className="h-section text-slate2-900 mb-5">
           Ready to move files without the friction?
@@ -26,6 +27,7 @@ export default function CTA() {
           </a>
         </div>
       </div>
+    </Reveal>
     </section>
   );
 }

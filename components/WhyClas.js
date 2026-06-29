@@ -1,4 +1,5 @@
 'use client';
+import { Reveal, StaggerParent, StaggerChild } from './Reveal';
 
 const POINTS = [
   {
@@ -28,7 +29,7 @@ export default function WhyClas() {
     <section className="py-20 sm:py-24 lg:py-28 bg-lavender-700 text-cream-50">
       <div className="container-px mx-auto max-w-7xl">
         <div className="whyclas-grid grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-start">
-          <div>
+          <Reveal variant="slideLeft">
             <div className="eyebrow text-lavender-400 mb-3">Why Clas</div>
             <h2 className="h-section text-cream-50 mb-5">
               Built to fix what we'd watched break for two decades.
@@ -36,21 +37,23 @@ export default function WhyClas() {
             <p className="text-base lg:text-lg leading-relaxed text-cream-200/90 max-w-md">
               The mortgage industry doesn't lack capacity. It lacks partners. Clas is a small team by design — the kind that treats your file like our own pipeline.
             </p>
-          </div>
+          </Reveal>
 
-          <div className="space-y-6">
+          <StaggerParent className="space-y-6" staggerChildren={0.1} delayChildren={0.15}>
             {POINTS.map((p) => (
-              <div key={p.num} className="flex gap-5 items-start">
-                <div className="flex-shrink-0 font-display text-3xl text-lavender-400/80 leading-none mt-1 w-12">
-                  {p.num}
+              <StaggerChild key={p.num} variant="slideRight">
+                <div className="flex gap-5 items-start">
+                  <div className="flex-shrink-0 font-display text-3xl text-lavender-400/80 leading-none mt-1 w-12">
+                    {p.num}
+                  </div>
+                  <div>
+                    <h3 className="font-display text-xl text-cream-50 mb-2">{p.title}</h3>
+                    <p className="text-cream-200/80 text-sm leading-relaxed">{p.body}</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-display text-xl text-cream-50 mb-2">{p.title}</h3>
-                  <p className="text-cream-200/80 text-sm leading-relaxed">{p.body}</p>
-                </div>
-              </div>
+              </StaggerChild>
             ))}
-          </div>
+          </StaggerParent>
         </div>
       </div>
     </section>

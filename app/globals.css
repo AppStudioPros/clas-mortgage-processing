@@ -348,3 +348,56 @@ body {
   0%, 100% { transform: translateX(0) translateY(0); }
   50% { transform: translateX(40px) translateY(-15px); }
 }
+
+/* ═══════════════════════════════════════════════
+   AMBIENT ANIMATIONS
+═══════════════════════════════════════════════ */
+
+/* Gentle float — hero badge, icons */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-7px); }
+}
+.float-y { animation: floatY 4s ease-in-out infinite; }
+.float-y-slow { animation: floatY 6s ease-in-out infinite; }
+.float-y-delay { animation: floatY 4s ease-in-out 1.5s infinite; }
+
+/* Shimmer sweep — guarantee banner, CTA sections */
+@keyframes shimmerSweep {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.guarantee-banner {
+  background-size: 200% auto;
+  background-image: linear-gradient(90deg, #4d2d82 0%, #6b3fa0 40%, #8b5fc0 50%, #6b3fa0 60%, #4d2d82 100%);
+  animation: shimmerSweep 6s linear infinite;
+}
+
+/* Soft pulse — primary CTA buttons */
+@keyframes softPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(107, 63, 160, 0.3); }
+  50% { box-shadow: 0 0 0 8px rgba(107, 63, 160, 0); }
+}
+.btn-gold { animation: softPulse 3s ease-in-out infinite; }
+
+/* Breathe — stat numbers, eyebrow labels */
+@keyframes breathe {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.75; }
+}
+.breathe { animation: breathe 3s ease-in-out infinite; }
+
+/* Spin slow — loading / decorative icons */
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.spin-slow { animation: spinSlow 12s linear infinite; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .float-y, .float-y-slow, .float-y-delay,
+  .guarantee-banner, .btn-gold, .breathe, .spin-slow {
+    animation: none !important;
+  }
+}
