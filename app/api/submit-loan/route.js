@@ -70,7 +70,7 @@ export async function POST(req) {
     `;
 
     await resend.emails.send({
-      from: 'Clas Mortgage Processing <noreply@webdesignpros365.com>',
+      from: 'Clas Mortgage Processing <noreply@clasmortgageprocessing.com>',
       to: ['info@clasmortgageprocessing.com'],
       replyTo: data.loEmail,
       subject: `New Loan Submission — ${data.borrowerName}${data.isRush ? ' ⚡ RUSH' : ''}`,
